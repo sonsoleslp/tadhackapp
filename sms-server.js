@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 
 const requestHandler = (request, response) => {
 	console.log(request.url, ("http://" + request.headers.host +"/sms"),request.method.toLowerCase())
-	res.setHeader("Access-Control-Allow-Origin", "*");
+	response.setHeader("Access-Control-Allow-Origin", "*");
   if ((request.url === ("/" + request.headers.host +"/sms") || request.url === "/sms" ) && request.method.toLowerCase() === "post")  {
   	var options = {
   	  hostname: 'api4.apidaze.io',
