@@ -1,7 +1,7 @@
 // content of index.js
 const http = require('http')
 const https = require('https')
-const port = 3000
+const port = process.env.PORT || 3000;
 const { exec } = require('child_process');
 
 const requestHandler = (request, response) => {
