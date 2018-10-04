@@ -7,68 +7,89 @@ export default class Prescriptions extends React.Component {
 			prescriptions : [
 				{
 					id: 22342342,
-					from: "23/9/2018",
+					from: "3/10/2018",
 					to: "23/11/2018",
+					dose: "One with every meal"
 				},
 				{
 					id: 34235345,
-					from: "13/8/2018",
+					from: "3/10/2018",
 					to: "13/10/2018",
+					dose: "One every morning"
 				},
 				{
 					id: 14242341,
-					from: "24/9/2018",
-					to: "29/11/2018"
+					from: "3/10/2018",
+					to: "29/11/2018",
+					dose: "One before going to bed"
 				},
 				{
 					id: 64564564,
-					from: "24/9/2018",
-					to: "29/11/2018"
+					from: "3/10/2018",
+					to: "29/11/2018",
+					dose: "One with every meal"
 				},
 				{
 					id: 75673567,
-					from: "24/9/2018",
-					to: "29/11/2018"
+					from: "4/9/2018",
+					to: "29/11/2018",
+					dose: "One every 4 hours"
 				},
 				{
 					id: 35345433,
-					from: "24/9/2018",
-					to: "29/11/2018"
+					from: "4/9/2018",
+					to: "29/11/2018",
+					dose: "One every 6 hours"
 				},
 				{
 					id: 12562645,
-					from: "24/9/2018",
-					to: "29/11/2018"
+					from: "4/9/2018",
+					to: "29/11/2018",
+					dose: "Two with every meal"
 				},
 				{
 					id: 25664564,
-					from: "24/9/2018",
-					to: "29/11/2018"
+					from: "4/9/2018",
+					to: "29/11/2018",
+					dose: "One when in pain"
 				},
 				{
 					id: 65653435,
-					from: "24/9/2018",
-					to: "29/11/2018"
+					from: "5/9/2018",
+					to: "29/11/2018",
+					dose: "One with every meal"
 				},
 				{
 					id: 15135353,
-					from: "24/9/2018",
-					to: "29/11/2018"
+					from: "5/9/2018",
+					to: "29/11/2018",
+					dose: "One with every meal"
 				},
 				{
 					id: 33434355,
-					from: "24/9/2018",
-					to: "29/11/2018"
+					from: "5/9/2018",
+					to: "29/11/2018",
+					dose: "One every 8 hours"
 				},
 				{
 					id: 98234242,
-					from: "24/9/2018",
-					to: "29/11/2018"
+					from: "5/9/2018",
+					to: "29/11/2018",
+					dose: "One every 3 days"
 				},
 			]
 		};
 	}
 	render(){
+		let filtered = {}
+		this.state.prescriptions.map(r => {
+			if(filtered[r.from]) {
+			 	filtered[r.from] =[ ...filtered[r.from], r.id];
+			} else {
+			 	filtered[r.from] = [r.id];
+			}
+		});
+
 		let noOrder = (this.props.shoppingCart && this.props.shoppingCart.size > 0 ? "" : "  no-order");
 		return <div className={"view  prescription-view" + (this.props.show ? "": " hide-view" )} >
 			<header>My prescriptions</header>

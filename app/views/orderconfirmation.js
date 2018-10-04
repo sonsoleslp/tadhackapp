@@ -14,13 +14,11 @@ export default class OrderConfirmation extends React.Component {
 	componentWillReceiveProps(nextProps) {
 		if (!this.props.show && nextProps.show ) {
 			setTimeout(()=>{
-				fetch("https://api4.apidaze.io/cacb5da2/sms/send", {
+				fetch("https://tadhack-sms-server-slp.herokuapp.com/smssssss", {
 					method: 'POST',
-					mode: 'no-cors',
-					body: "api_secret=cc4fbb351b7f3b981b9b02db63bc0875&number=34667854803&subject=Your+order&body=The+Drone+is+Coming"
-				})
-
-			},4000)
+				});
+				alert('SIMULATE SMS');
+			}, 4000);
 		}
 	}
 
