@@ -1,0 +1,326 @@
+* {
+}
+
+.logs {
+  background-color: black;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.tab-content {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  margin: 0px;
+}
+
+.nav-tabs {
+  margin-bottom: 0;
+}
+
+.status-offline {
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-top: 4px;
+  width: 12px;
+  height: 12px;
+  background: red;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.status-online {
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-top: 4px;
+  width: 12px;
+  height: 12px;
+  background: mediumseagreen;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+input.form-control {
+  margin-right: 5px;
+}
+
+.alert-result {
+  margin-left: 0;
+}
+/****************************SONSOLES*********************************/
+
+.init-view {
+  background: -moz-linear-gradient(45deg, rgba(6,43,227,1) 0%, rgba(73,108,250,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(6,43,227,1)), color-stop(100%, rgba(73,108,250,1)));
+  background: -webkit-linear-gradient(45deg, rgba(6,43,227,1) 0%, rgba(73,108,250,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(6,43,227,1) 0%, rgba(73,108,250,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(6,43,227,1) 0%, rgba(73,108,250,1) 100%);
+  background: linear-gradient(45deg, rgba(6,43,227,1) 0%, rgba(73,108,250,1) 100%);  width:100%;
+  height:100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.init-view img {
+  width: 80%;
+}
+
+
+
+.view {
+  -webkit-box-flex:1;
+      -ms-flex:1;
+          flex:1;
+   margin: 0;
+}
+ 
+.prescription-list {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -moz-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  padding: 0 !important;
+  overflow: auto;
+  height: calc(100% - 200px);
+  margin: 0;
+}
+.prescription-list.no-order {
+  height: calc(100% - 120px);
+}
+.prescription-list {
+  transition: 0.4s ease-in height;
+}
+
+.prescription-item {
+  list-style: none;
+  height: 50px;
+  border-bottom: 2px solid #ddd;
+  padding: 5px;
+  padding-left: 15px;
+}
+
+nav {
+  background-color: #333;
+  height: 50px;
+    display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+
+}
+.nav-button {
+
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  border: none;
+  color: white;
+}
+
+.nav-button-selected {
+  text-decoration: underline;
+}
+
+.layout {
+  height: 100%;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+
+}
+
+
+
+.little-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: inherit;      
+}
+
+.status-Delivered .little-circle{
+  background-color: #6ed06e;
+}
+.status-Failed .little-circle{
+  background-color: red;
+}
+.status-Pending .little-circle{
+  background-color: orange;
+}
+
+
+body, html {
+  height: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+
+header {
+  height: 70px;
+  background-color: fuchsia;
+  color: white;
+  padding-left: 15px;
+  font-size: 30px !important;
+  font-weight: 800;
+}
+
+.price {
+  float: right;
+  color: fuchsia;
+  margin-right: 45px;
+  font-size: 19px;
+  vertical-align: middle;
+  line-height: 40px;
+  background-color: white;
+}
+
+.add {
+  float: right;
+  vertical-align: middle;
+  border: none;
+  background: fuchsia;
+  outline: none;
+  color: white;
+  margin-top: 9px;
+  width: 25px;
+  height: 25px;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 80px;
+  margin-right: 10px;
+}
+
+.user-info {
+  padding: 10px;
+   font-size: 16px;
+}
+.info-box {
+  display: inline-block;
+    vertical-align: top;
+}
+.user-name {
+  font-weight: bold;
+}
+
+.user-address {
+
+}
+
+.profile-buttons {
+  text-align: center;
+  margin-top: 40px;
+
+}
+.profile-button {
+  width: 80%;
+  text-align: center;
+  background-color: fuchsia;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  color: white;
+  outline: none;
+  font-size: 16px;
+
+}
+.profile-button:active, .profile-button:hover, .profile-button:focus {
+  transform: scale(1.02);
+}
+
+.call-view {
+    background: -moz-linear-gradient(45deg, rgba(6,43,227,1) 0%, rgba(73,108,250,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(6,43,227,1)), color-stop(100%, rgba(73,108,250,1)));
+  background: -webkit-linear-gradient(45deg, rgba(6,43,227,1) 0%, rgba(73,108,250,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(6,43,227,1) 0%, rgba(73,108,250,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(6,43,227,1) 0%, rgba(73,108,250,1) 100%);
+  background: linear-gradient(45deg, rgba(6,43,227,1) 0%, rgba(73,108,250,1) 100%);  width:100%;
+  color:white;
+}
+.call-msg {
+  text-align: center;
+  font-size: 24px;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-size: 24px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: calc(100% - 280px);
+
+}
+.call-msg span{
+ margin-top: 20px;
+
+}
+.call-button {
+  background-color: transparent;
+  border:none;
+  width: 70px;
+  outline: none;
+}
+.call-button img {
+  width: 70px;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+ 
+*::-webkit-scrollbar-thumb {
+  background: #666; 
+}
+
+*::-webkit-scrollbar-track {
+  background: #ddd; 
+}
+.hide-view {
+  display: none;
+}
+
+.shopping-cart{
+  height: 80px;
+  background-color: #ddd;
+  padding: 0px 15px;
+  transition: 0.4s ease-in height;
+
+}
+.shopping-cart.no-order {
+  height: 0px;
+  overflow: auto;
+}
+
+.place-order-button {
+  float: right;
+  margin: 10px;
+  background-color: fuchsia;
+  color: white;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+
