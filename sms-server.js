@@ -8,7 +8,7 @@ const requestHandler = (request, response) => {
 	console.log(request.url, ("http://" + request.headers.host +"/sms"),request.method.toLowerCase())
 	response.setHeader("Access-Control-Allow-Origin", "*");
   if ((request.url === ("/" + request.headers.host +"/sms") || request.url === "/sms" ) && request.method.toLowerCase() === "post")  {
-  	var options = {
+  	var options = { 
   	  hostname: 'api4.apidaze.io',
   	  port: 443,
   	  path: '/cacb5da2/sms/send',
