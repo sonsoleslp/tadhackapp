@@ -33,6 +33,7 @@ const requestHandler = (request, response) => {
   	req.write("api_secret=cc4fbb351b7f3b981b9b02db63bc0875&number=34667854803&subject=Your+order&body=The+Drone+is+Coming");
   	req.end();
   }
+  response.send('ok')
   response.end()
 }
 
