@@ -33,8 +33,7 @@ module.exports = {
     ],
     gas: "auto",
     contracts: {
-      SimpleStorage: {
-        fromIndex: 0,
+      DrugOn: {
         args: [100]
       }
     }

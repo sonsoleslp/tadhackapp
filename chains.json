@@ -1,205 +1,81 @@
 {
+  "0xe53bca75bd0aa7e5ebd985b0238002fac82c1d479501f9ff633ffc91e2753837": {
+    "contracts": {
+      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
+        "name": "DrugOn",
+        "address": "0xBa9a83EDDFf50D140F865C7cE5988B6c016d915e"
+      }
+    }
+  },
+  "0x270f15b0cee5f5fc1e5e1c602a2d5eadbdb200ca4a02cf998ad83ed2262abd0f": {
+    "contracts": {
+      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
+        "name": "DrugOn",
+        "address": "0x1f21707f57732147D2e2bcEb9f6B96A718150cb1"
+      },
+      "0x3043b04ad856d169c8f0b0509c0bc63192dc7edd92d6933c58708298a0e381be": {
+        "name": "ENSRegistry",
+        "address": "0xc5701DA7706145F5890fC0332b2a992EC148A665"
+      },
+      "0x761c34e9ea3dfdd7966254482deb49c90e877f9493c8df33be77ce152f4f62bd": {
+        "name": "Resolver",
+        "address": "0x1344883022f154b50d6D7AE482B0F98d112229A1"
+      },
+      "0xa55cdcdf30c31fca30a286b7039571327e777d1097ccfb863e8363a244be3fce": {
+        "name": "FIFSRegistrar",
+        "address": "0x2Ba725f7d7838673E65878f8cA0B7bD2D6d67123"
+      },
+      "0x5c95488c968e5d7fe2cd99542384bd7b7daa2d45a3124ec86f6bc1f494363743": {
+        "name": "DrugOn",
+        "address": "0xE59a7c5ad95473Ae7CeA3Ee9FCa10E622Af90C35"
+      }
+    }
+  },
   "0x48906670097ad98eb472a874217496b5b916d571fa8ce85de1743b5c3bfd9b19": {
     "contracts": {
-      "0xb84d125645e94e6329e6494db63830d1c68a719c328036dce55337f79a512e27": {
-        "name": "SimpleStorage",
-        "address": "0xcD51bF9D6e3B25fD68A1d728A78C66fDECF97d38"
+      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
+        "name": "DrugOn",
+        "address": "0x148448e1680E4DAB9c573312CeF3C1f812d1C2a5"
       },
       "0x3043b04ad856d169c8f0b0509c0bc63192dc7edd92d6933c58708298a0e381be": {
         "name": "ENSRegistry",
-        "address": "0x7190708948eAe2f65B0F851b2bceC5bf12D8a839"
+        "address": "0xD7543496E1891eB260f878d3bDDbbd3cd4Cf1F81"
       },
-      "0xccc3e6adb47452e1e95d7e5eba486498519ddbd0e0eda47b02294f58858e72d1": {
+      "0xa2536236e25498dc6eee414de7f3bb51b6c7daebf593c5e4c998c402c70de062": {
         "name": "Resolver",
-        "address": "0xE764f38D9484633dD61892DaEFa8973E8CfA7A86"
+        "address": "0xE23AAf7CC71e06c793a1fc41E71C4417fd19C565"
       },
-      "0x8bc9e5927ac386e1f97e7e5d37fca2becf1f5f01ca20894a2148dcc6bdb9f50b": {
+      "0x3666e84699478e96f27525981015293359a7e6e67c38936934005bc2bfd8f186": {
         "name": "FIFSRegistrar",
-        "address": "0x2e40541D5A51e7aD6c268Fc5696614A3Dac53Dfc"
+        "address": "0xfD98Af58a71E77599a77dc3C67427F9b0c572C96"
       },
-      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
+      "0x5c95488c968e5d7fe2cd99542384bd7b7daa2d45a3124ec86f6bc1f494363743": {
         "name": "DrugOn",
-        "address": "0x2eb1d3C84C4AAd857C01a054d1D932f978f8FB06"
+        "address": "0xDb26cFCF5ef5923B6449431c7D6ab6C9E10B0058"
       }
     }
   },
-  "0x2dc0f334ea35f5912af547dae016d747729be097540f15517e60c1cdc13b831c": {
+  "0x05588cc219093fcb681494089e3745f9ab4afc5444151994d5c321a92bc24fbb": {
     "contracts": {
-      "0xb84d125645e94e6329e6494db63830d1c68a719c328036dce55337f79a512e27": {
-        "name": "SimpleStorage",
-        "address": "0x45eea18513730A61fB1602ef8f24198E28E7DFE3"
-      },
-      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
+      "0x5c95488c968e5d7fe2cd99542384bd7b7daa2d45a3124ec86f6bc1f494363743": {
         "name": "DrugOn",
-        "address": "0x78911657EFe9E68de0F2abA6c08fe09F5EC0ea2D"
+        "address": "0x7Ea98D9e89a15f1371459C78bd599E9360BDcFcC"
       },
       "0x3043b04ad856d169c8f0b0509c0bc63192dc7edd92d6933c58708298a0e381be": {
         "name": "ENSRegistry",
-        "address": "0xe6a622131150b8d54B70158B6b84AbDe3288c6ed"
+        "address": "0x1699FC4451760Ac3a36C122a6081c4d27BF1e044"
       },
-      "0x39c7cdabe42ec0db4b9832b28806537cddc01621c257d95b2763cc66c88270bd": {
+      "0xec70cbe99be597a3593804739d6ca155edf14828f2dae5fdce2dda7b13fdbf13": {
         "name": "Resolver",
-        "address": "0x4c70e5825076C71c49Bc7458213390959A84fA9e"
+        "address": "0xa409Ddcf5383A56a77A0BAfE78F834A099efE4B1"
       },
-      "0xb8379707693e60552f15667cd216d26590e07a2b9f6996c3622865fdf834fabe": {
+      "0x735b7d06317412d32b941ff5aeac95db3dcef7c881222bfce708ef8f00115e47": {
         "name": "FIFSRegistrar",
-        "address": "0xd4BCCe0C34C03806B8Dc62ACf873c3cA27abec36"
-      }
-    }
-  },
-  "0xe4476c54db68567dc4c09d9e473d8470adb9eca1cbe1b2b7e73dd6c2991b866c": {
-    "contracts": {
-      "0xb84d125645e94e6329e6494db63830d1c68a719c328036dce55337f79a512e27": {
-        "name": "SimpleStorage",
-        "address": "0x544E0A56ed9C2E618142f7B703C2B56750D24F30"
+        "address": "0x6e467d6F2Ec33ac82a9388D69d7344566A30BF3e"
       },
-      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
+      "0xda5e918a74e99f5f43f9804e063ffaff08ee5c43ab51deae68be030dd40ea7b9": {
         "name": "DrugOn",
-        "address": "0xC2AE656cBD88A4A87b07e6689A4e65F9815310c8"
-      },
-      "0x3043b04ad856d169c8f0b0509c0bc63192dc7edd92d6933c58708298a0e381be": {
-        "name": "ENSRegistry",
-        "address": "0xA5eef3865AC76E0b5Bc69a706ea6657e1f678BE5"
-      },
-      "0xc54d14743a021b8be5eecc8367fd5bff05fc74699bce86b728ddcda639e656d9": {
-        "name": "Resolver",
-        "address": "0x694AAe14cCAa95414FEA650C9a65728B6634fD6F"
-      },
-      "0xae42462a61b4f95a2add9f90d3f30f859d6e3c7a4111bb07b0dddb51cefe0920": {
-        "name": "FIFSRegistrar",
-        "address": "0xAAf5A89340443C5d9dC3c6E0075247C9B66D527f"
-      }
-    }
-  },
-  "0x33ef0209fc75889352969ddba70c3e0f2faf4f41460653cb65efd59b82731b45": {
-    "contracts": {
-      "0xb84d125645e94e6329e6494db63830d1c68a719c328036dce55337f79a512e27": {
-        "name": "SimpleStorage",
-        "address": "0x834E8102b4d7B646d7cef010e1270a90Db1Ab113"
-      },
-      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
-        "name": "DrugOn",
-        "address": "0x4fD82a041f0Bc946f82c6457936132B021aE5BCd"
-      },
-      "0x3043b04ad856d169c8f0b0509c0bc63192dc7edd92d6933c58708298a0e381be": {
-        "name": "ENSRegistry",
-        "address": "0xF94bE8c3A8c8A2e0Fdf47f7Badc6E4bC235C4a4A"
-      },
-      "0x7eafad6959a384f73f57125ff3956afe590cbf47eb33699d3647bba813e0cd7f": {
-        "name": "Resolver",
-        "address": "0xe94856680a74292138133BB2508A8de3C2d13c86"
-      },
-      "0x89ba6429d4255e1e7ee7b79c79d30fb90cf6c1f81789806845ff9d507c27d773": {
-        "name": "FIFSRegistrar",
-        "address": "0xEF443eC59bC677D79CFda2cBb29502CDc88A294C"
-      }
-    }
-  },
-  "0x3ebf7bc76d0a9db876b985bb1bb17f517d9cd607cc8c58dab08eacd3c131ad47": {
-    "contracts": {
-      "0xb84d125645e94e6329e6494db63830d1c68a719c328036dce55337f79a512e27": {
-        "name": "SimpleStorage",
-        "address": "0x48D620baED5fD61d54BDb242866a000a4E544Ee9"
-      },
-      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
-        "name": "DrugOn",
-        "address": "0x7b25d3F23e343E7Fb1d516532A30808d8C371a73"
-      },
-      "0x3043b04ad856d169c8f0b0509c0bc63192dc7edd92d6933c58708298a0e381be": {
-        "name": "ENSRegistry",
-        "address": "0x77745bEF7fDad22793f8B7D03516e4BfC5754dE9"
-      },
-      "0x39e1e5953f603600a3abd9f616aed24ae2498cfe2a28cc3c17d7e2fa41009bbf": {
-        "name": "Resolver",
-        "address": "0x52F539c8C342A0A308aE09fD587843aC2D5Fa6aE"
-      },
-      "0xb7d6b427b394b96556f9733a46b5daf4be65f0ac2a4a267bb975d6f4f176cdc1": {
-        "name": "FIFSRegistrar",
-        "address": "0xc5bBAb3cc4e6c649243d5018c0aB70D9C452b431"
-      }
-    }
-  },
-  "0xf0b6823fe912cd1bc6133df3cc1f1f77f8f06b5fbe149fda131d1900c60e090a": {
-    "contracts": {
-      "0xb84d125645e94e6329e6494db63830d1c68a719c328036dce55337f79a512e27": {
-        "name": "SimpleStorage",
-        "address": "0x49fF87897DF3cd4494bf54f2e1b34Fca1B6F1d5e"
-      },
-      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
-        "name": "DrugOn",
-        "address": "0x9038Af85bB9a35e790d229F0Dc89e603581c6c8A"
-      },
-      "0x3043b04ad856d169c8f0b0509c0bc63192dc7edd92d6933c58708298a0e381be": {
-        "name": "ENSRegistry",
-        "address": "0xDb640df13857d5EE935aE1c805ab2c870C1Df512"
-      },
-      "0xbf3c3617b4ed60971b3ddadddd7bcb0cc410089a0fab3e04db9836470fa0ea56": {
-        "name": "Resolver",
-        "address": "0xeCE2667408fF528Ef93e7E711bAb5CBBC7f08254"
-      },
-      "0x417ef912c679196e796582e1f38685aab4c500ef713aebd6b1b8bf5a3810cdf9": {
-        "name": "FIFSRegistrar",
-        "address": "0x8E7b669cACE368c12Ed3c789b449A411b9E72feE"
-      }
-    }
-  },
-  "0xb91efae6bf3b69436d2bd943207f8653ebb22a677d940b5887b1aa7b260c4dab": {
-    "contracts": {
-      "0xb84d125645e94e6329e6494db63830d1c68a719c328036dce55337f79a512e27": {
-        "name": "SimpleStorage",
-        "address": "0x3Be8A4724F70217A220656ED564a42194Cdc5644"
-      },
-      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
-        "name": "DrugOn",
-        "address": "0x43829fb8dC4e03C53C10e72a2a6Ae1765A56AD26"
-      },
-      "0x3043b04ad856d169c8f0b0509c0bc63192dc7edd92d6933c58708298a0e381be": {
-        "name": "ENSRegistry",
-        "address": "0x7868000EbeE031949492e825cFCE71015436c973"
-      },
-      "0xe00614614460b5c948a98d8d8cf8c36fcca30e3f2b53ca23db186300ff206251": {
-        "name": "Resolver",
-        "address": "0x7Cf4C180608c4451712BD9D873092BD9C78B3AE6"
-      },
-      "0xa43b67db0d5a74fe07a5436b14d83490302b3fbed12c8c922e43e20be1112b91": {
-        "name": "FIFSRegistrar",
-        "address": "0xEdA8Cdb2132eDD69C53d784b7efC143F30CaE0cc"
-      }
-    }
-  },
-  "0xeda7ed36f4e7c2da9820f2230294af19e152d2024334065e717dc6236de70a85": {
-    "contracts": {
-      "0xb84d125645e94e6329e6494db63830d1c68a719c328036dce55337f79a512e27": {
-        "name": "SimpleStorage",
-        "address": "0x63355caee8958E216582C382049f78F040250969"
-      },
-      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
-        "name": "DrugOn",
-        "address": "0x0069428789321c7357c6adc6F46651A8c16DfDbC"
-      }
-    }
-  },
-  "0x7db77ce92e317634a9081fd2c206257a2975948075d3e7611c99ba36119e85fe": {
-    "contracts": {
-      "0xb84d125645e94e6329e6494db63830d1c68a719c328036dce55337f79a512e27": {
-        "name": "SimpleStorage",
-        "address": "0xb1c7C7324e9A0E98Cb7B03eDb46F4c5169AE2bb3"
-      },
-      "0xe15a7de7fe9ede508aeb50db3b9a11183e8139c7379b67b47663070181fd78a2": {
-        "name": "DrugOn",
-        "address": "0x62E03634a1ea7E3d4576a0Fd5115BB16d82c44E6"
-      },
-      "0x3043b04ad856d169c8f0b0509c0bc63192dc7edd92d6933c58708298a0e381be": {
-        "name": "ENSRegistry",
-        "address": "0x90259A8C79C073fa88888c6E206C16603D83040c"
-      },
-      "0xc3c4eba16e118a22332b2aa2590b6f7b4f1494cbb23c8478107eb727891ba8b0": {
-        "name": "Resolver",
-        "address": "0x57B4f9DCe5b13530c8030E1F7526151BC7e43BAf"
-      },
-      "0x36ea50e096d3824cb8fc982d04686250a563392ee49617e43b78aca8dcf069d9": {
-        "name": "FIFSRegistrar",
-        "address": "0xC8cc23d310BE1D3D91d0F64c105B89591C000E8b"
+        "address": "0x622587867CDcB9A7861f3B4608DAce275e456235"
       }
     }
   }

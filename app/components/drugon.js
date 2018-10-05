@@ -79,15 +79,43 @@ class Drugon extends React.Component {
   	const FIRST_TIME = true
   	if (FIRST_TIME) {
   		 web3.eth.getAccounts().then(accs=>{
-  		 let acc = accs[0];
-
-  		 console.log(patient)
-
+  		 let acc = "0x670304063b1a5c3edE4b46d361CE61Ae2560b334" || accs[0];
+ 			// this.createPatient(acc);
+ 			let pc = this.getPrescritionsCount(acc) ;
+ 			// let prescs = this.getPrescriptionById(acc);
   		 });
   		
   	}
   }
 
+  async createPatient(acc) {
+	 var address = acc;
+	 // set up our contract method with the input values from the form
+	 const createPatient = DrugOn.methods.createPatient();
+	 const gasEstimate = await createPatient.estimateGas({ from: address, gas: 100000 });
+	 const result = await createPatient.send({ from: address,  gas: gasEstimate + 1000 });
+
+	 console.log(result)
+  }
+
+  async getPrescritionsCount(acc)  {
+
+   var addressPatient = acc;
+
+   // set up our contract method with the input values from the form
+   const getPrescritionsCounts = await DrugOn.methods.getPrescritionsCount(addressPatient).call();
+   console.log(getPrescritionsCounts)
+  }
+
+  async getPrescriptionById (acc) {
+
+   var addressPatient = acc;
+   var index = 0;
+
+   // set up our contract method with the input values from the form
+   const getPrescritionsByIdS = await DrugOn.methods.getPrescritionsById(addressPatient, index).call();
+   console.log(getPrescritionsByIdS)
+  }
 
   handleChange(e) {
     this.setState({ valueSet: e.target.value });

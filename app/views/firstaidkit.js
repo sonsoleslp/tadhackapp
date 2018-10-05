@@ -61,11 +61,19 @@ export default class FAK extends React.Component {
 				this.setState({showNotification: false})
 			}, 3000);
 			setTimeout(()=>{
-				fetch("https://tadhack-sms-server-slp.herokuapp.com/smssssss", {
-					method: 'POST',
-				});
-				alert('SIMULATE SMS');
-			}, 8000);
+				// fetch("https://tadhack-sms-server-slp.herokuapp.com/smss", {
+				// 	method: 'POST',
+				// });
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', 'http://tadhack-sms-server-slp.herokuapp.com/smSs', true);
+
+				xhr.onload = function () {
+				  // Request finished. Do processing here.
+				};
+
+				xhr.send(null);
+				// alert('SIMULATE SMS');
+			}, 7000);
 		}
 	}
 

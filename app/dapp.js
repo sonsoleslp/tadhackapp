@@ -5,7 +5,6 @@ import {Tabs, Tab} from 'react-bootstrap';
 import EmbarkJS from 'Embark/EmbarkJS';
 import Blockchain from './components/blockchain';
 import Whisper from './components/whisper';
-import Storage from './components/storage';
 import ENS from './components/ens';
 import Prescriptions from './views/prescriptions';
 import Init from './views/init';
@@ -54,12 +53,7 @@ class App extends React.Component {
         }
         this.setState({whisperEnabled: true});
       });
-
-      EmbarkJS.Storage.isAvailable().then((result) => {
-        this.setState({storageEnabled: result});
-      }).catch(() => {
-        this.setState({storageEnabled: false});
-      });
+ 
     });
   }
 
@@ -83,26 +77,6 @@ class App extends React.Component {
         <div>{this.state.error}</div>
       </div>);
     }
-   /* return (<div>
-      <h3>Embark - Usage Example</h3>
-      <Tabs onSelect={this.handleSelect} activeKey={this.state.activeKey} id="uncontrolled-tab-example">
-        <Tab eventKey={1} title={this._renderStatus('Blockchain', this.state.blockchainEnabled)}>
-          <Blockchain/>
-        </Tab>
-        <Tab eventKey={2} title={this._renderStatus('Decentralized Storage', this.state.storageEnabled)}>
-          <Storage enabled={this.state.storageEnabled}/>
-        </Tab>
-        <Tab eventKey={3} title={this._renderStatus('P2P communication (Whisper)', this.state.whisperEnabled)}>
-          <Whisper enabled={this.state.whisperEnabled}/>
-        </Tab>
-        <Tab eventKey={4} title={this._renderStatus('Naming (ENS)', ensEnabled)}>
-          <ENS enabled={ensEnabled}/>
-        </Tab>
-        <Tab eventKey={5} title={this._renderStatus('Prescriptions', true)}>
-          
-      </Tab>
-      </Tabs>
-    </div>);*/
    return this.state.show ?  <Init show={this.state.show}/> :
     <div className="layout">
     {(this.state.section !== "profile" && this.state.section !== "call") ?<img className="profile-shortcut"  src="images/268x268-hombre-de-brazos-cruzados.png"/>:null}
