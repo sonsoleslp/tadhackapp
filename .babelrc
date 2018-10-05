@@ -1,0 +1,11 @@
+{
+  "plugins": [
+  ],
+  "presets": [
+ 
+  ],
+  "ignore": [
+    "config/",
+    "node_modules"
+  ]
+}

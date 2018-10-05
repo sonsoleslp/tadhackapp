@@ -10,11 +10,24 @@ export default class Call extends React.Component {
 	}
 	render(){
 		return <div className={"view call-view" + (this.props.show ? "": " hide-view" )} >
+			<img className="pharmacist" src="images/pharmacist.svg"/>
 			<div className="call-msg">
-			<span>Call your pharmacist if you have any doubt regarding your medication</span>
-			 <button className="call-button" onClick={this.call}>
-			 	<img src ="images/phone.svg"/>
-			 </button></div>
+			<span>If you have any doubts, <br/>consult the pharmacist</span>
+			<div className="call-buttons"> 
+				<button className="call-button" onClick={this.call}>
+				 	<img src ="images/video_white.svg"/>
+				 </button>
+				 <button className="call-button" onClick={this.call}>
+				 	<img src ="images/silence_white.svg"/>
+				 </button>
+				 <button className="call-button" onClick={this.call}>
+				 	<img src ="images/dots_white.svg"/>
+				 </button>
+				 <button className="call-button" onClick={this.call}>
+				 	<img src ="images/call_white.svg"/>
+				 </button>		
+			 </div>	 
+			 </div>
 		</div>
 	}
 

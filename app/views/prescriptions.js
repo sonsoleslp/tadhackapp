@@ -4,116 +4,66 @@ export default class Prescriptions extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			prescriptions : [
-				{
-					id: 22342342,
-					from: "3/10/2018",
-					to: "23/11/2018",
-					dose: "One with every meal"
-				},
-				{
-					id: 34235345,
-					from: "3/10/2018",
-					to: "13/10/2018",
-					dose: "One every morning"
-				},
-				{
-					id: 14242341,
-					from: "3/10/2018",
-					to: "29/11/2018",
-					dose: "One before going to bed"
-				},
-				{
-					id: 64564564,
-					from: "3/10/2018",
-					to: "29/11/2018",
-					dose: "One with every meal"
-				},
-				{
-					id: 75673567,
-					from: "4/9/2018",
-					to: "29/11/2018",
-					dose: "One every 4 hours"
-				},
-				{
-					id: 35345433,
-					from: "4/9/2018",
-					to: "29/11/2018",
-					dose: "One every 6 hours"
-				},
-				{
-					id: 12562645,
-					from: "4/9/2018",
-					to: "29/11/2018",
-					dose: "Two with every meal"
-				},
-				{
-					id: 25664564,
-					from: "4/9/2018",
-					to: "29/11/2018",
-					dose: "One when in pain"
-				},
-				{
-					id: 65653435,
-					from: "5/9/2018",
-					to: "29/11/2018",
-					dose: "One with every meal"
-				},
-				{
-					id: 15135353,
-					from: "5/9/2018",
-					to: "29/11/2018",
-					dose: "One with every meal"
-				},
-				{
-					id: 33434355,
-					from: "5/9/2018",
-					to: "29/11/2018",
-					dose: "One every 8 hours"
-				},
-				{
-					id: 98234242,
-					from: "5/9/2018",
-					to: "29/11/2018",
-					dose: "One every 3 days"
-				},
-			]
+			
 		};
 	}
 	render(){
 		let filtered = {}
-		this.state.prescriptions.map(r => {
-			if(filtered[r.from]) {
-			 	filtered[r.from] =[ ...filtered[r.from], r.id];
+		this.props.prescriptions.map(r => {
+			let date = new Date(r.from);
+			let m = date.getMonth();
+			let d = date.getDate();
+			if(filtered[m]) {
+				if( filtered[m][d] ) {
+					filtered[m][d] = [...filtered[m][d], {id: r.id }]
+				} else {
+					filtered[m] = {...filtered[m] , [d]: [{id: r.id }]}
+				}
 			} else {
-			 	filtered[r.from] = [r.id];
+				filtered[m] = {[d]: [{id: r.id}]}
 			}
 		});
+		console.log(filtered)
+		let dateToday = new Date();
+		let locale = "en-us";
+		let monthShort = dateToday.getMonth();
+		let month = dateToday.toLocaleString(locale, {month: "long"})
 
-		let noOrder = (this.props.shoppingCart && this.props.shoppingCart.size > 0 ? "" : "  no-order");
 		return <div className={"view  prescription-view" + (this.props.show ? "": " hide-view" )} >
-			<header>My prescriptions</header>
-			<ul className={"prescription-list" + noOrder}>
-				{this.state.prescriptions.map(p=>{
-					return <li className="prescription-item">
-					<b>{medicines[p.id].name}</b> 
-					<button 
-					className="add"
-					onClick={()=>{this.props.onPrescriptionSelected(p.id)}}
-					>{this.props.shoppingCart.has(p.id) ? "✓":"➕"}</button>
-					<span className="price">{medicines[p.id].price.toFixed(2)} €</span>
-					<br/>
-						{p.from} - {p.to}
+			<header>My prescriptions
+			</header>
+			<p className="prescription-month">{month} ▾ </p>
+			<ul className={"prescription-list"  }>
+				{Object.keys(filtered[monthShort]).map(d=>{
+					let currentDate = (new Date("2018-"+(monthShort+1)+"-"+d));
+					return <li className="prescription-month-block">
+						<div className="prescription-day-block">
+						<span className="day">{(currentDate.toLocaleString(locale, { day: 'numeric' }) )}</span><br/>
+						<span className="week">{(currentDate.toLocaleString(locale, {  weekday: 'short' }) )}</span>
+						</div>
+						<ul className="prescription-items">
+						{filtered[monthShort][d].map(p=> {
+							return <li className={"prescription-item" + (d < 5 ? " past":"")} >
+							<b>{medicines[p.id].name}</b>  - {medicines[p.id].price.toFixed(2)} €<br/>
+							{medicines[p.id].dose} 
+							<button 
+							className="add"
+							onClick={()=>{this.props.onPrescriptionSelected(p.id)}}
+							>{this.props.shoppingCart.has(p.id) ? "➖":"➕"}</button>
+							<br/>
+							</li>
+						})
+						 }
+						</ul>
 					</li>
-				})
-				}
+				})}
+				
 			</ul>
-			<div className={ "shopping-cart" + noOrder} >
-				<button onClick={this.props.orderConfirmation} className="place-order-button"> Place order</button>
-				Your shopping cart <br/>
-				{this.props.shoppingCart.size} item(s)
-			</div>
 		</div>
 	}
+
+	 dateOrdinal(d) {
+    return d+(31==d||21==d||1==d?"st":22==d||2==d?"nd":23==d||3==d?"rd":"th")
+		};
 
 }

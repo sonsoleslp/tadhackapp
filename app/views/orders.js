@@ -7,51 +7,46 @@ export default class Orders extends React.Component {
 			orders : [
 				{
 					date: "12/1/2016",
-					status: "Delivered"
+					status: "Delivered",
+					color: "#C40B5A",
+					medication: []
+
+
 				},
 				{
 					date: "2/4/2016",
-					status: "Delivered"
+					status: "Delivered",
+					color: "#9dbae4",
+					medication: []
+
+
 				},
 				{
 					date: "5/6/2016",
-					status: "Delivered"
+					status: "Delivered",
+					color: "#062BE3",
+					medication: []
+
+
 				},
+ 
 				{
-					date: "8/10/2016",
-					status: "Delivered"
-				},
-				{
-					date: "15/1/2017",
-					status: "Delivered"
-				},
-				{
-					date: "18/4/2017",
-					status: "Delivered"
-				},
-				{
-					date: "19/7/2017",
-					status: "Delivered"
-				},
-				{
-					date: "21/9/2017",
-					status: "Delivered"
-				},
-				{
-					date: "23/12/2017",
-					status: "Delivered"
-				},
-				{
-					date: "25/2/2018",
-					status: "Pending"
-				},
-				{
-					date: "29/5/2018",
-					status: "Pending"
-				},
-				{
-					date: "31/8/2018",
-					status: "Pending"
+					date: "5/10/2018",
+					status: "Pending",
+					color: "#C40B5A",
+					pharmacy: "Goya 89 Pharmacy",
+					medication: [
+						{ 
+							name: "Fluconazol",
+							dose: "Prophylactic fungal infection medicine",
+						},
+						{
+							name: "Enantyum",
+							dose: "Pain killer"
+						}
+					],
+					price: 7.5
+
 				},
 			]
 		};
@@ -59,13 +54,27 @@ export default class Orders extends React.Component {
 	render(){
 		return <div className={"view  orders-view" + (this.props.show ? "": " hide-view" )} >
 			<header>My orders</header>
-			<ul className="prescription-list">
-				{this.state.orders.map(p=>{
-					return <li className="prescription-item">
-					<b>Date:</b> {p.date} <br/>
-				 	<b>Status:</b> <span className={"status" + " status-"+ (p.status)} >{p.status} <span className="little-circle"></span></span>
+			<ul className="order-list">
+				{this.state.orders.map((p,i)=>{
+					if (i === this.state.orders.length -1) {
+						return <li className="order-item" style={{backgroundColor: p.color, height: this.state.showQR ? '423px':'285px'}} onClick={()=>{this.setState({showQR: !this.state.showQR})}}>
+					<span style={{float: 'right'}}>{p.date}</span>
+					<h2>{p.pharmacy}</h2>
+					<ul className="order-ul">
+					{p.medication.map(med=> <li className="order-li"><p ><b>{med.name}</b></p><p>{med.dose}</p></li> )}
+					</ul>
+					<hr/>
+					<p className="right">Total order - {p.price.toFixed(2)}€</p>
+					{this.state.showQR ? <div className="qr">
 					<br/>
+						<img src="images/QR.png" />
+					</div>:null}
 					</li>
+					} else if (!this.state.showQR) {
+						return <li className="order-item" style={{backgroundColor: p.color, height: '30px'}}></li>
+					}
+					return null
+					
 				})
 				}
 			</ul>

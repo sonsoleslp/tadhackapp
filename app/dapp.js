@@ -11,10 +11,14 @@ import Prescriptions from './views/prescriptions';
 import Init from './views/init';
 import Profile from './views/profile';
 import Orders from './views/orders';
+import FAK from './views/firstaidkit';
 import Call from './views/call';
 import Empty from './views/empty';
 import OrderConfirmation from './views/orderconfirmation';
 import Navbar from './components/navbar';
+import Drugon from './components/drugon';
+import {prescriptions} from './constants/constants';
+import './bootstrap.min.css';
 import './dapp.css';
 
 class App extends React.Component {
@@ -28,9 +32,10 @@ class App extends React.Component {
       whisperEnabled: false,
       storageEnabled: false,
       blockchainEnabled: false,
-      shoppingCart: new Set([34235345]),
+      shoppingCart: new Set([ ]),
       show: true,
       section: "profile",
+      prescriptions
     };
   }
 
@@ -100,7 +105,9 @@ class App extends React.Component {
     </div>);*/
    return this.state.show ?  <Init show={this.state.show}/> :
     <div className="layout">
-   <Prescriptions show={this.state.section === "prescriptions"}
+    {(this.state.section !== "profile" && this.state.section !== "call") ?<img className="profile-shortcut"  src="images/268x268-hombre-de-brazos-cruzados.png"/>:null}
+
+   <Prescriptions show={this.state.section === "prescriptions"} prescriptions={this.state.prescriptions}
       shoppingCart={this.state.shoppingCart} 
       orderConfirmation={()=>{
         this.setState({section: "orderconfirmation"});
@@ -119,26 +126,32 @@ class App extends React.Component {
         shoppingCart.has(id) ? shoppingCart.delete(id) : shoppingCart.add(id)
         this.setState({shoppingCart})}
    } />
+   <FAK show={this.state.section === "fak"}
+      shoppingCart={this.state.shoppingCart} 
+      orderConfirmation={()=>{
+        this.setState({shoppingCart: new Set()});
+      }}
+      onPrescriptionSelected={ (id)=>{ 
+        let shoppingCart = new Set(this.state.shoppingCart);
+        shoppingCart.has(id) ? shoppingCart.delete(id) : shoppingCart.add(id)
+        this.setState({shoppingCart})}
+   } />
    <OrderConfirmation show={this.state.section === "orderconfirmation"}/>
    <Empty show={[ "settings"].indexOf(this.state.section) !== -1} />
-   <Navbar onSectionSelected={(section)=>{this.setState({section})}} selectedSection={this.state.section} /></div>
+   <Drugon setRecipes={(prescriptions)=>{this.setState({prescriptions})}}/>
+   <Navbar orders={this.state.shoppingCart.size} onSectionSelected={(section)=>{this.setState({section})}} selectedSection={this.state.section} /></div>
   }
 
   componentDidMount(){
-    let elem = document.body;
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) { /* Firefox */
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /* IE/Edge */
-      elem.msRequestFullscreen();
-    }
+   
     setTimeout(() => {
       this.setState({show: false});
-    }, 1)
+    }, 2000)
+
+
+
+
   }
 }
 
-ReactDOM.render(<App></App>, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));
