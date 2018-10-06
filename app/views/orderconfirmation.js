@@ -12,8 +12,4 @@ export default class OrderConfirmation extends React.Component {
 		</div>
 	}
 	
-
-	/*
-		curl -v  -X POST "https://api4.apidaze.io/cacb5da2/sms/send" -d 'api_secret=cc4fbb351b7f3b981b9b02db63bc0875&number=34667854803&subject=Your+order&body=The+Drone+is+Coming'
-	*/
 }

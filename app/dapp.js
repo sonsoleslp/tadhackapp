@@ -16,7 +16,7 @@ import Empty from './views/empty';
 import OrderConfirmation from './views/orderconfirmation';
 import Navbar from './components/navbar';
 import Drugon from './components/drugon';
-import {prescriptions} from './constants/constants';
+import {prescriptions, orders} from './constants/constants';
 import './bootstrap.min.css';
 import './dapp.css';
 
@@ -34,7 +34,8 @@ class App extends React.Component {
       shoppingCart: new Set([ ]),
       show: true,
       section: "profile",
-      prescriptions
+      prescriptions,
+      orders
     };
   }
 
@@ -94,6 +95,7 @@ class App extends React.Component {
    <Profile onSectionSelected={(section)=>{this.setState({section})}} show={this.state.section === "profile"} />
    <Call show={this.state.section === "call"}/>
    <Orders show={this.state.section === "orders"}
+      orders={this.state.orders}
       shoppingCart={this.state.shoppingCart} 
       onPrescriptionSelected={ (id)=>{ 
         let shoppingCart = new Set(this.state.shoppingCart);
@@ -102,8 +104,19 @@ class App extends React.Component {
    } />
    <FAK show={this.state.section === "fak"}
       shoppingCart={this.state.shoppingCart} 
-      orderConfirmation={()=>{
-        this.setState({shoppingCart: new Set()});
+      onSectionSelected={(section)=>{this.setState({section})}} 
+      orderConfirmation={(price, medication)=>{
+        this.setState({shoppingCart: new Set(), orders: [...this.state.orders,
+            {
+              date: "6/10/2018",
+              status: "Pending",
+              color: "#C40B5A",
+              pharmacy: "Goya 89 Pharmacy",
+              medication,
+              price
+
+            },
+          ]});
       }}
       onPrescriptionSelected={ (id)=>{ 
         let shoppingCart = new Set(this.state.shoppingCart);
@@ -112,7 +125,7 @@ class App extends React.Component {
    } />
    <OrderConfirmation show={this.state.section === "orderconfirmation"}/>
    <Empty show={[ "settings"].indexOf(this.state.section) !== -1} />
-   <Drugon setRecipes={(prescriptions)=>{this.setState({prescriptions})}}/>
+   <Drugon setPrescriptions={(prescriptions)=>{this.setState({prescriptions})}}/>
    <Navbar orders={this.state.shoppingCart.size} onSectionSelected={(section)=>{this.setState({section})}} selectedSection={this.state.section} /></div>
   }
 

@@ -14,6 +14,7 @@ class Drugon extends React.Component {
       valueGet: "",
       logs: []
     }
+    this.getPrescritionsCount = this.getPrescritionsCount.bind(this)
   }
 
 
@@ -79,10 +80,10 @@ class Drugon extends React.Component {
   	const FIRST_TIME = true
   	if (FIRST_TIME) {
   		 web3.eth.getAccounts().then(accs=>{
-  		 let acc = "0x670304063b1a5c3edE4b46d361CE61Ae2560b334" || accs[0];
+  		 let acc = "0xfD47F944789263719D0810FDbBE6DeF3Cab80858" || accs[0];
  			// this.createPatient(acc);
  			let pc = this.getPrescritionsCount(acc) ;
- 			// let prescs = this.getPrescriptionById(acc);
+ 			let prescs = this.getPrescriptionById(acc);
   		 });
   		
   	}
@@ -101,10 +102,20 @@ class Drugon extends React.Component {
   async getPrescritionsCount(acc)  {
 
    var addressPatient = acc;
-
+   var prescriptions = []
    // set up our contract method with the input values from the form
    const getPrescritionsCounts = await DrugOn.methods.getPrescritionsCount(addressPatient).call();
    console.log(getPrescritionsCounts)
+   for (let i = 0; i < getPrescritionsCounts ; i++) {
+   		 let getPrescritionsByIdS = await DrugOn.methods.getPrescritionsById(addressPatient, i).call();
+   		 let from  = new Date(parseInt(getPrescritionsByIdS[2])).toLocaleString('en-US').split(",")[0].replace("/","-").replace("/","-")
+   		 let presc = {id:getPrescritionsByIdS[1], from  }
+   		 console.log(presc)
+   		 prescriptions.push(presc)
+
+   }
+   this.props.setPrescriptions(prescriptions)
+   
   }
 
   async getPrescriptionById (acc) {
@@ -113,8 +124,10 @@ class Drugon extends React.Component {
    var index = 0;
 
    // set up our contract method with the input values from the form
-   const getPrescritionsByIdS = await DrugOn.methods.getPrescritionsById(addressPatient, index).call();
-   console.log(getPrescritionsByIdS)
+   // const getPrescritionsByIdS = await DrugOn.methods.getPrescritionsById(addressPatient, index).call();
+   // console.log(getPrescritionsByIdS)
+
+   // this.props.setPrescriptions()
   }
 
   handleChange(e) {

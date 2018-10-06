@@ -30,7 +30,7 @@ export const medicines = {
 		img: "pill01.svg",
 		dose: "One with every meal" },
 	12562645 : { 
-		name: "Fluconazol", 
+		name: "Fluconazole", 
 		price: 4.3,
 		img: "pill01.svg",
 		dose: "One every 8 hours" },
@@ -70,33 +70,33 @@ export const medicines = {
 export const prescriptions = [
 				{
 					id: 22342342,
-					from: "2018-10-3",
+					from: "2018-10-4",
 					to: "2018-11-23",
 				},
 				{
 					id: 34235345,
-					from: "2018-10-3",
+					from: "2018-10-4",
 					to: "2018-10-13",
 				},
  
 				{
 					id: 35345433,
-					from: "2018-10-4",
+					from: "2018-10-5",
 					to: "2018-11-29",
 				},
 				{
 					id: 12562645,
-					from: "2018-10-4",
+					from: "2018-10-6",
 					to: "2018-11-29",
 				},
 				{
 					id: 25664564,
-					from: "2018-10-4",
+					from: "2018-10-6",
 					to: "2018-11-29",
 				},
 				{
 					id: 65653435,
-					from: "2018-10-5",
+					from: "2018-10-2",
 					to: "2018-11-29",
 				},
 				{
@@ -106,12 +106,63 @@ export const prescriptions = [
 				},
 				{
 					id: 33434355,
-					from: "2018-10-5",
+					from: "2018-10-2",
 					to: "2018-11-29",
 				},
 				{
 					id: 98234242,
-					from: "2018-10-5",
+					from: "2018-10-4",
 					to: "2018-11-29",
 				},
 			]
+
+
+export const orders = [
+				{
+					date: "12/1/2016",
+					status: "Delivered",
+					color: "#C40B5A",
+					medication: []
+
+
+				},
+				{
+					date: "2/4/2016",
+					status: "Delivered",
+					color: "#9dbae4",
+					medication: []
+
+
+				},
+				{
+					date: "5/6/2016",
+					status: "Delivered",
+					color: "#062BE3",
+					medication: []
+
+
+				},
+ 
+				{
+					date: "6/10/2018",
+					status: "Pending",
+					color: "#C40B5A",
+					pharmacy: "Goya 89 Pharmacy",
+					medication: [
+						{ 
+							name: "Fluconazol",
+							dose: "Prophylactic fungal infection medicine",
+						},
+						{
+							name: "Enantyum",
+							dose: "Pain killer"
+						}
+					],
+					price: 7.5
+
+				},
+
+]
+
+
+

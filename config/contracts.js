@@ -34,7 +34,8 @@ module.exports = {
     gas: "auto",
     contracts: {
       DrugOn: {
-        args: [100]
+        args: [100],
+        address: "0xE7049121E55f297d0e8be3B7D884e04Bb585bC4C"
       }
     }
   },

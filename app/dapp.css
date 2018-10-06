@@ -306,7 +306,8 @@ header {
   margin-right: 10px;
   border-radius: 50%;
   color: #C40B5A;
-  font-size: 10px;
+  font-size: 9px;
+  text-align: center;
 }
 
 .profile-view {

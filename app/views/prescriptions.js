@@ -34,7 +34,7 @@ export default class Prescriptions extends React.Component {
 			</header>
 			<p className="prescription-month">{month} ▾ </p>
 			<ul className={"prescription-list"  }>
-				{Object.keys(filtered[monthShort]).map(d=>{
+				{Object.keys(filtered[Object.keys(filtered)[0]]).map(d=>{
 					let currentDate = (new Date("2018-"+(monthShort+1)+"-"+d));
 					return <li className="prescription-month-block">
 						<div className="prescription-day-block">
@@ -42,8 +42,8 @@ export default class Prescriptions extends React.Component {
 						<span className="week">{(currentDate.toLocaleString(locale, {  weekday: 'short' }) )}</span>
 						</div>
 						<ul className="prescription-items">
-						{filtered[monthShort][d].map(p=> {
-							return <li className={"prescription-item" + (d < 5 ? " past":"")} >
+						{filtered[Object.keys(filtered)[0]][d].map(p=> {
+							return <li className={"prescription-item" + (d > 76 ? " past":"")} >
 							<b>{medicines[p.id].name}</b>  - {medicines[p.id].price.toFixed(2)} €<br/>
 							{medicines[p.id].dose} 
 							<button 
